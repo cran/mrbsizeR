@@ -14,7 +14,6 @@
 #'     By default \code{prob = 0.95}.
 #' @return An array with simultaneous credible intervals \code{VmapCI} and
 #'     the dimensions of the original input object, \code{mm} and \code{nn}.
-#' @export
 #' @examples
 #' # Artificial sample data: 10 observations (5-by-2 object), 10 samples
 #' set.seed(987)
@@ -91,15 +90,4 @@ CImap <- function(smoothVec, mm, nn, prob = 0.95){
   ciout <- array(VmapCI, c(mm, nn))
   return(ciout)
 }
-
-
-
-
-
-
-
-
-
-
-
 

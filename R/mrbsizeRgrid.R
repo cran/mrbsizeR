@@ -38,7 +38,6 @@
 #'     smooths created.
 #' @return \code{smoothSamples} Samples of differences of smooths at neighboring scales, 
 #'     as column vectors.
-#' @export
 #' @examples
 #' # Artificial sample data
 #' set.seed(987)
@@ -135,9 +134,9 @@ mrbsizeRgrid <- function(posteriorFile, mm, nn, lambdaSmoother, prob = 0.95, smo
     if (b > 1){
       smMean[[b-1]] <- matrix(smoothMean, nrow = mm)
       names(smMean)[[b-1]] <- paste(lambdaSmoother[b-1], "_", lambdaSmoother[b], sep = "")
-      hpout[[b-1]] <- HPWmap(smoothVec, mm, nn, prob = 0.95)
+      hpout[[b-1]] <- HPWmap(smoothVec, mm, nn, prob = prob)
       names(hpout)[[b-1]] <- paste(lambdaSmoother[b-1], "_", lambdaSmoother[b], sep = "")
-      ciout[[b-1]] <- CImap(smoothVec, mm, nn, prob = 0.95)
+      ciout[[b-1]] <- CImap(smoothVec, mm, nn, prob = prob)
       names(ciout)[[b-1]] <- paste(lambdaSmoother[b-1], "_", lambdaSmoother[b], sep = "")
       
       if(smoothOut == TRUE) {

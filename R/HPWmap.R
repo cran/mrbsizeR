@@ -18,7 +18,6 @@
 #' \item \code{hpw}: Highest pointwise probabilities (\code{VmapHPW}) including
 #'     the dimensions of the original input image, \code{mm} and \code{nn}.
 #' }
-#' @export
 #' @examples
 #' # Artificial sample data: 10 observations (5-by-2 object), 10 samples
 #' set.seed(987)

@@ -14,7 +14,6 @@
 #'     \item eigval Row vector containing the eigenvalues of Q. 
 #'     \item eigvec Matrix containing the eigenvectors of Q as columns. 
 #' }
-#' @export
 #' @examples
 #' eig_out <- eigenQsphere(phimin = 180/10, phimax = 180 - 180/10, mm = 10, nn = 20)
 #' 

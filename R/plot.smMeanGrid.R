@@ -18,7 +18,6 @@
 #'     produces square plots.
 #' @param ... Further graphical parameters can be passed.
 #' @return Plots of the differences of smooths are created.
-#' @export
 #' @examples
 #' # Artificial sample data
 #' set.seed(987)

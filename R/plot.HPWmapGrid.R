@@ -30,7 +30,6 @@
 #' @param ... Further graphical parameters can be passed. 
 #' @return Plots of pointwise and/or highest pointwise probabilities for all
 #'     differences of smooths are created.
-#' @export
 #' @examples
 #' # Artificial sample data
 #' set.seed(987)

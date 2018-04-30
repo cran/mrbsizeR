@@ -31,7 +31,6 @@
 #' @param ... Further graphical parameters can be passed.
 #' @return Plots of the tapering functions for all differences of smooths
 #'     at neighboring scales are created.
-#' @export
 #' @examples
 #' # Signal-independent tapering function plot for a 30-by-10 object with 
 #' # the smoothing parameter sequence [0, 1, 10, 1000, inf]: 
@@ -51,16 +50,16 @@
 TaperingPlot <- function(lambdaSmoother, mm, nn, Xmu, ...){
 
   #---------- Initiating variables --------------------------#
-  
+
   if (min(lambdaSmoother) != 0) {
-    lambdaSmoother <- c(0, lambdaSmoother)
+    lambdaSmoother <- c(0, sort(lambdaSmoother, decreasing = FALSE))
   }
-  
+
   N <- mm * nn
   MU <- t(eigenLaplace(mm, nn))^2
   D <- sort(MU)
   indx <- order(MU)
-  
+
   if (missing(Xmu)){
     fac <- rep(1, N)
   } else {
@@ -70,28 +69,28 @@ TaperingPlot <- function(lambdaSmoother, mm, nn, Xmu, ...){
     fac <- matrix(dctMatrix(mm) %*% matrix(Xmu, nrow = mm) %*% t(dctMatrix(nn)), nrow = N)
     fac <- fac[indx]
   }
-  
+
   lenL <- length(lambdaSmoother) - 1
   val1 <- rep(0, N)
   val2 <- rep(0, N)
   x <- seq(1, N, 1)
   diff <- matrix(NA, nrow = lenL + 1, ncol = N)
-  
-  
+
+
   #--------- Defining the tapering functions and drawing the plot ---------#
   for (l in 1:lenL){
     lfirst <- lambdaSmoother[l]
     lnext <- lambdaSmoother[l+1]
-    
+
     for (i in 2:N){
       val2[i] <- 1 / (1 + lfirst * D[i]) * fac[i]
       val1[i] <- 1 / (1 + lnext * D[i]) * fac[i]
     }
-    
+
     diff[l, ] <- val2 - val1
   }
   diff[lenL + 1, ] <- val1
-  
+
   # If signal-dependent, use running mean
   if (missing(Xmu) == FALSE){
     for (i in 1:dim(diff)[1]){
@@ -102,8 +101,8 @@ TaperingPlot <- function(lambdaSmoother, mm, nn, Xmu, ...){
       diff[which(is.na(diff))] <- 0
     }
   }
-  
-  
+
+
   # Plot all tapering functions except of the last one
   for (i in 1:lenL){
     if (i == 1){
@@ -117,15 +116,15 @@ TaperingPlot <- function(lambdaSmoother, mm, nn, Xmu, ...){
       graphics::lines(x, diff[i, ], type = "l", lty = 1, col = i, lwd = 2)
     }
   }
-  
-  
+
+
   # Add missing Tapering Functions ((x - inf) and inf)
   graphics::lines(x, diff[lenL + 1, ], type = "l", lty = 1, col = lenL + 1, lwd = 2)
   graphics::segments(x0 = 1, y0 = 0, x1 = 1, y1 = max(diff), col = lenL + 2, lwd = 2)
   graphics::segments(x0 = 1, y0 = 0, x1 = N, y1 = 0, col = lenL + 2, lwd = 2)
   graphics::box()
-  
-  
+
+
   # Add Legend
   legendlabel <- vector(mode = "expression", length = lenL + 2)
   for (i in 1:lenL){
@@ -133,7 +132,7 @@ TaperingPlot <- function(lambdaSmoother, mm, nn, Xmu, ...){
   }
   legendlabel[lenL + 1] <- substitute(expression(paste(x, " - ", infinity)), list(x = lambdaSmoother[lenL + 1]))[2]
   legendlabel[lenL + 2] <- expression(infinity)
-  
+
   graphics::legend("right", legend = c(legendlabel), lty = 1, col = seq(1, lenL + 2, 1), lwd = 2, bty = "n",
                    inset = c(-0.4, 0), cex = 0.8, title = "Smoothing range")
 }

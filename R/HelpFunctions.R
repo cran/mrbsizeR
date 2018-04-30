@@ -7,7 +7,6 @@
 #'
 #' @param x Matrix to be turned.
 #' @return Matrix \code{x}, turned by 90 degrees counter-clockwise.
-#' @export
 #' @examples
 #' set.seed(987)
 #' sampleMat <- matrix(stats::rnorm(100), nrow = 10)
@@ -39,7 +38,6 @@ turnmat <- function(x) {
 #'     \item \code{-1}: swap first quadrant with third and second quadrant with fourth. 
 #' }
 #' @return Swapped matrix.
-#' @export
 #' @examples
 #' set.seed(987) 
 #' sampleMat <- matrix(sample(1:10, size = 25, replace = TRUE), nrow = 5)
@@ -56,19 +54,19 @@ turnmat <- function(x) {
 
 # Function inspired by http://stackoverflow.com/questions/38230794/how-to-write-fftshift-and-ifftshift-in-r
 fftshift <- function(inputMatrix, dimension = -1) {
-  rows <- dim(inputMatrix)[1]    
-  cols <- dim(inputMatrix)[2]    
-  
+  rows <- dim(inputMatrix)[1]
+  cols <- dim(inputMatrix)[2]
+
   swapUpDown <- function(inputMatrix) {
     rowsHalf <- ceiling(rows / 2)
     return(rbind(inputMatrix[((rowsHalf + 1):rows), (1:cols)], inputMatrix[(1:rowsHalf), (1:cols)]))
   }
-  
+
   swapLeftRight <- function(inputMatrix) {
     colsHalf <- ceiling(cols / 2)
     return(cbind(inputMatrix[1:rows, ((colsHalf + 1):cols)], inputMatrix[1:rows, 1:colsHalf]))
   }
-  
+
   if (dimension == -1) {
     inputMatrix <- swapUpDown(inputMatrix)
     return(swapLeftRight(inputMatrix))
@@ -103,8 +101,7 @@ fftshift <- function(inputMatrix, dimension = -1) {
 #'     \item \code{-1}: swap first quadrant with third and second quadrant with fourth. 
 #' }
 #' @return Swapped matrix.
-#' @export
-#' @examples 
+#' @examples
 #' set.seed(987)
 #' sampleMat <- matrix(sample(1:10, size = 25, replace = TRUE), nrow = 5)
 #' 
@@ -120,15 +117,15 @@ fftshift <- function(inputMatrix, dimension = -1) {
 
 # Function inspired by http://stackoverflow.com/questions/38230794/how-to-write-fftshift-and-ifftshift-in-r
 ifftshift <- function(inputMatrix, dimension = -1) {
-  
-  rows <- dim(inputMatrix)[1]    
-  cols <- dim(inputMatrix)[2]    
-  
+
+  rows <- dim(inputMatrix)[1]
+  cols <- dim(inputMatrix)[2]
+
   swapUpDown <- function(inputMatrix) {
     rowsHalf <- floor(rows/2)
     return(rbind(inputMatrix[((rowsHalf+1):rows), (1:cols)], inputMatrix[(1:rowsHalf), (1:cols)]))
   }
-  
+
   swapLeftRight <- function(inputMatrix) {
     colsHalf <- floor(cols/2)
     return(cbind(inputMatrix[1:rows, ((colsHalf+1):cols)], inputMatrix[1:rows, 1:colsHalf]))
@@ -161,7 +158,6 @@ ifftshift <- function(inputMatrix, dimension = -1) {
 #' @param lowerDiag Subdiagonal of tridiagonal matrix. Must have length \code{length(mainDiag) - 1}.
 #' 
 #' @return Tridiagonal matrix. 
-#' @export
 #' @examples 
 #' set.seed(987)
 #' mainDiag <- sample(100:110, size = 6, replace = TRUE)

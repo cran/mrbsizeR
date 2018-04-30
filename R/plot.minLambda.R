@@ -10,7 +10,6 @@
 #' @param x Output of function \code{\link{MinLambda}}.
 #' @param ... Further graphical parameters can be passed.
 #' @return Plot of \eqn{G} on a grid.
-#' @export
 #' @examples
 #' set.seed(987)
 #' sampleData <- matrix(stats::rnorm(100), nrow = 10)

@@ -20,7 +20,6 @@
 #' @return A list containing the following elements:
 #' @return \code{sample} Samples of the marginal posterior of the input.
 #' @return \code{mu} Mean of the marginal posterior of the input.
-#' @export
 #' @examples
 #' # Artificial sample data
 #' set.seed(987)

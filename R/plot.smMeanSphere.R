@@ -19,8 +19,6 @@
 #'     is passed, defaults are used. 
 #' @param ... Further graphical parameters can be passed.
 #' @return Plots of the differences of smooths are created.
-#' @export
-#' @import maps
 #' @examples
 #' # Artificial spherical sample data
 #' set.seed(987)

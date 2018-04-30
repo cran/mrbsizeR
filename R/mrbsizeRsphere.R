@@ -28,7 +28,6 @@
 #'     smooths created.
 #' @return \code{smoothSamples} Samples of differences of smooths at neighboring scales, 
 #'     as column vectors.
-#' @export
 #' @examples
 #' # Artificial spherical sample data
 #' set.seed(987)

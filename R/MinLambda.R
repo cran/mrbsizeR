@@ -36,7 +36,6 @@
 #' @return \code{lambda} Evaluated smoothing parameters \eqn{\lambda}.
 #' @return \code{minind} Index of minimal \eqn{\lambda}'s. \code{lambda}[\code{minind}] 
 #'     gives the minimal values.
-#' @export 
 #' @examples
 #' # Artificial sample data
 #' set.seed(987)
@@ -74,11 +73,11 @@ MinLambda <- function(Xmu, mm, nn, nGrid, nLambda = 2, lambda, sphere = FALSE){
     fac <- c(t(Xmu) %*% eigVec)
     if (methods::hasArg(lambda) == FALSE) lambda <- 10^seq(-6, 1, len = nGrid)
   }
-       
+
   #---------- Initiating variables ---------------------------------------#
-    
+
   N <- mm * nn
-    
+
   minimum <- 10^11
   if (identical(nLambda, 2) | identical(nLambda, 3)) {
     G <- array(NA, c(rep(nGrid, nLambda)))
@@ -88,14 +87,14 @@ MinLambda <- function(Xmu, mm, nn, nGrid, nLambda = 2, lambda, sphere = FALSE){
   lambda1 <- fac
   lambda1[1] <- 0
   LambdaMat <- matrix(0, nrow = N, ncol = nGrid)
-  
+
   for (i in 1:nGrid) {
     l1 <- lambda[i]
     lambda2 <- fac / (1 + l1 * D)
     lambda2[1] <- 0
     LambdaMat[ ,i] <- lambda2
   } 
-  
+
 
   #--------- Computing the value of G on the grid for nLambda = 2 --------------#
   if (identical(nLambda, 2)) {
