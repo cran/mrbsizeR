@@ -32,10 +32,10 @@ NumericMatrix dctMatrix(int n) {
   for(int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
       if (i == 0) {
-        dctMatrix(i, j) = 1/sqrt(n);
+        dctMatrix(i, j) = 1/ std::sqrt(static_cast<double>(n));
       }
       if (i > 0) {
-        dctMatrix(i, j) = sqrt(2/double(n)) * cos((2*j + 1) * i * M_PI / (2 * n));
+        dctMatrix(i, j) = std::sqrt(2/static_cast<double>(n)) * cos((2*j + 1) * i * M_PI / (2 * n));
       }
     }
   }

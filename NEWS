@@ -1,3 +1,13 @@
+mrbsizeR 1.1.1 (Release date: 2018-05-02)
+==============
+
+Changes:
+
+* adressing Solaris compiler error:
+  rcpp_dctmatrix.cpp: In function ‘Rcpp::NumericMatrix dctMatrix(int)’:
+  rcpp_dctmatrix.cpp:35:35: error: call of overloaded ‘sqrt(int&)’ is ambiguous
+         dctMatrix(i, j) = 1/sqrt(n);
+
 mrbsizeR 1.1.0 (Release date: 2018-04-29)
 ==============
 
@@ -5,4 +15,3 @@ Changes:
 
 * new maintainer Roman Flury
 * dctmmatrix and eigenLaplace via rcpp
-

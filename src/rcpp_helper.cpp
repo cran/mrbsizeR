@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+
 // [[Rcpp::export]]
 NumericVector for_eigenLaplace(NumericVector mu, NumericVector lambda, int mm, int nn) {
   NumericVector Mu(nn * mm);

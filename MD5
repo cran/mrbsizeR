@@ -1,6 +1,6 @@
-4c0b221b708f9994b1b16c9ecc7e4b43 *DESCRIPTION
+a701f88e26a5bb284ec78f12de4c89e1 *DESCRIPTION
 35b4de8b13082d5c402b99bc7c5085e1 *NAMESPACE
-2252b1a5b060e6a595864362c78af0a2 *NEWS
+05ec8ab27fd41ed95084fa3e324c86ed *NEWS
 541f76a22d4b8def15cf3081248c9309 *R/CImap.R
 43c6a6b2b622cb624abee61b7080fed1 *R/DFT_matrix.R
 d3b57d9e791f709052098225dcb533a8 *R/HPWmap.R
@@ -53,8 +53,8 @@ f3f8ffdb4ccb9fbe3ec363ce958ae6ea *man/plot.minLambda.Rd
 add1f204cde79c068a88223d0931710c *man/tridiag.Rd
 6605087c1cc598969a2edc072f2f7ce6 *man/turnmat.Rd
 7f76adae62e3d646d20c472056d247c2 *src/RcppExports.cpp
-373af72b982e2cb0f6a9d9700fd6b451 *src/rcpp_dctmatrix.cpp
-6216d4a48ace857a9d9bd9c46bba3245 *src/rcpp_helper.cpp
+aacd40b9f5cd5e9795261495138a1c57 *src/rcpp_dctmatrix.cpp
+35f89d1e753d7a9414e3083429ade78e *src/rcpp_helper.cpp
 b5ae2f7bddb7456432cd4fe76d46e331 *tests/testthat.R
 02046f23298379a998976ab1334d1480 *tests/testthat/test-rcpp.R
 23eab8f284ac622ca4dd333abe9d1d45 *tests/testthat/test-trigonometric.R
