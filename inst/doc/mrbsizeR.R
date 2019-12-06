@@ -1,3 +1,11 @@
+## ----setup, include = FALSE, cache = FALSE-------------------------------
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 6, fig.height = 6, fig.align = "center"
+)
+options(digits = 3)
+
 ## ----packageload, echo=FALSE, results='hide', message=FALSE, warning=FALSE----
 library(fields)
 library(maps)
@@ -43,7 +51,7 @@ image(tas.su.1995.MM5I$su, col = fields::tim.colors(), xaxt = 'n', yaxt = 'n', m
 ## ----objectivefunc1, echo=TRUE, eval=FALSE-------------------------------
 #  # Minimization of objective function with respect to the smoothing parameters
 #  tas.min.lambda.out <- MinLambda(Xmu = tas.post.samp$mu, mm = 120, nn = 98,
-#                                  nGrid = 45, nLambda = 3, sphere = FALSE,
+#                                  nLambda = 3, sphere = FALSE,
 #                                  lambda=10^seq(-12, 10, len = 45))
 
 ## ----objectivefunc2, echo=FALSE, eval=TRUE-------------------------------
