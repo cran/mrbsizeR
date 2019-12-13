@@ -1,6 +1,6 @@
-c4c0128592215e3cbcef7a929765a406 *DESCRIPTION
+4610f84674a22bc8f2d996a146dc7330 *DESCRIPTION
 35b4de8b13082d5c402b99bc7c5085e1 *NAMESPACE
-09edd88fd58eca29dc8bddea884d723f *NEWS.md
+59cb6299bac2bec602adbabbb8e160d8 *NEWS.md
 541f76a22d4b8def15cf3081248c9309 *R/CImap.R
 43c6a6b2b622cb624abee61b7080fed1 *R/DFT_matrix.R
 d3b57d9e791f709052098225dcb533a8 *R/HPWmap.R
@@ -9,7 +9,7 @@ d3b57d9e791f709052098225dcb533a8 *R/HPWmap.R
 fd133ea471d75b3610291f67aef9fab9 *R/RcppExports.R
 a174184ede00687e319e34b2ebbecf7f *R/TaperingPlot.R
 70d1f3f58831bfad3168f556d1ac7fba *R/eigenLaplace.R
-e1a8fbd8bc55f8df1e325a1fd9308d06 *R/eigenQsphere.R
+904eec756f67d8deca4c05e72814f5de *R/eigenQsphere.R
 6f46a62a484d8e2f8f9a362e4fd92e9d *R/mrbsizeR.R
 6fa4b98f3128535d705ddcc80f5a0e8e *R/mrbsizeRgrid.R
 3ab26d7ce73865082ad333d91f6376b7 *R/mrbsizeRsphere.R
@@ -25,7 +25,7 @@ c10217a1f5d2c160d95b8bde8b21cc92 *R/plot.smMeanSphere.R
 94692bf2f822c57ba157e20d7cc922e6 *build/vignette.rds
 1c6d855ae6f78e9ae75881bb213c206f *inst/doc/mrbsizeR.R
 642c3201226c0fbceb12f2ad0d97a17e *inst/doc/mrbsizeR.Rmd
-87c435e7257345425513b12eafa98672 *inst/doc/mrbsizeR.pdf
+6e6240958d32e2d973f25e74f7cf4267 *inst/doc/mrbsizeR.pdf
 385231c84bd9a2287dccf69395a8333e *inst/extdata/junedat_mu.Rda
 795ee274dbdb5c10defa3e0a0df2fbf8 *inst/extdata/tas.min.lambda.out.Rda
 4e5a1c3a0c929926042196fa49a327d0 *inst/extdata/tas.su.1995.MM5I.rda
@@ -36,7 +36,7 @@ c10217a1f5d2c160d95b8bde8b21cc92 *R/plot.smMeanSphere.R
 80a615484c3b4d1cfa9659243c626564 *man/dctMatrix.Rd
 7fb11fda4e873774939658507db3089d *man/dftMatrix.Rd
 20e32dfe15398b209dd96b837837873b *man/eigenLaplace.Rd
-aca243dc83dcfd514b79eb813c10c0d1 *man/eigenQsphere.Rd
+3bab44f48f584737f93a7e40f35f0e51 *man/eigenQsphere.Rd
 6d8e429a1d080238692edd3ea7656706 *man/fftshift.Rd
 dc944f33492311fd6eb1b1caa4c5fdf2 *man/ifftshift.Rd
 ab03512388f2a29a96082554295776d1 *man/mrbsizeR.Rd
@@ -55,7 +55,7 @@ add1f204cde79c068a88223d0931710c *man/tridiag.Rd
 6605087c1cc598969a2edc072f2f7ce6 *man/turnmat.Rd
 479e58b553793be722e3647f62db21cf *src/RcppExports.cpp
 aacd40b9f5cd5e9795261495138a1c57 *src/rcpp_dctmatrix.cpp
-cb30d42c55ddaca37f21b0130adaf17f *src/rcpp_helper.cpp
+9e59d86c54f12238980fad3c8135ff21 *src/rcpp_helper.cpp
 b5ae2f7bddb7456432cd4fe76d46e331 *tests/testthat.R
 47a910fdaade4465ccc34a4d927b1918 *tests/testthat/test-rcpp.R
 23eab8f284ac622ca4dd333abe9d1d45 *tests/testthat/test-trigonometric.R
