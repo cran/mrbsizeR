@@ -1,7 +1,7 @@
 Package: mrbsizeR
 Type: Package
 Title: Scale Space Multiresolution Analysis of Random Signals
-Version: 1.2.1
+Version: 1.2.1.1
 Date: 2019-12-10
 Authors@R: c(
     person("Thimo", "Schuster", email = "thimo.schuster@gmail.com", role = c("aut")),
@@ -30,10 +30,10 @@ BugReports: https://github.com/romanflury/mrbsizeR/issues
 URL: https://github.com/romanflury/mrbsizeR,
         https://romanflury.github.io/mrbsizeR/
 NeedsCompilation: yes
-Packaged: 2019-12-13 09:46:50 UTC; roflur
+Packaged: 2020-03-30 12:10:57 UTC; hornik
 Author: Thimo Schuster [aut],
   Roman Flury [cre, aut],
   Leena Pasanen [ctb],
   Reinhard Furrer [ctb]
 Repository: CRAN
-Date/Publication: 2019-12-13 11:00:02 UTC
+Date/Publication: 2020-04-01 11:25:03 UTC

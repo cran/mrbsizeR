@@ -1,4 +1,4 @@
-4610f84674a22bc8f2d996a146dc7330 *DESCRIPTION
+e0344ed9a9f14ebd83b8ba29e3ad1658 *DESCRIPTION
 35b4de8b13082d5c402b99bc7c5085e1 *NAMESPACE
 59cb6299bac2bec602adbabbb8e160d8 *NEWS.md
 541f76a22d4b8def15cf3081248c9309 *R/CImap.R
@@ -22,10 +22,10 @@ a3a0f3f7b55ab68e274b369ccb03eded *R/plot.HPWmapGrid.R
 c10217a1f5d2c160d95b8bde8b21cc92 *R/plot.smMeanSphere.R
 2d49c7ff84ba09c45fc88d27fc09bfc5 *R/rmvtDCT.R
 38bb655a167d67b8cb0c16f6dd8f05ca *README.md
-94692bf2f822c57ba157e20d7cc922e6 *build/vignette.rds
-1c6d855ae6f78e9ae75881bb213c206f *inst/doc/mrbsizeR.R
+749341827398a4a2607f88037852051b *build/vignette.rds
+155202dcc49be760a3cad7d20e0c79e0 *inst/doc/mrbsizeR.R
 642c3201226c0fbceb12f2ad0d97a17e *inst/doc/mrbsizeR.Rmd
-6e6240958d32e2d973f25e74f7cf4267 *inst/doc/mrbsizeR.pdf
+1438c9c07ac9dd2bef5eb5c6ac2b7859 *inst/doc/mrbsizeR.pdf
 385231c84bd9a2287dccf69395a8333e *inst/extdata/junedat_mu.Rda
 795ee274dbdb5c10defa3e0a0df2fbf8 *inst/extdata/tas.min.lambda.out.Rda
 4e5a1c3a0c929926042196fa49a327d0 *inst/extdata/tas.su.1995.MM5I.rda

@@ -1,4 +1,4 @@
-## ----setup, include = FALSE, cache = FALSE-------------------------------
+## ----setup, include = FALSE, cache = FALSE------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE, 
   comment = "#>", 
@@ -12,12 +12,12 @@ library(maps)
 library(knitr)
 library(mrbsizeR)
 
-## ----strdata1, echo = FALSE, results = 'markup'--------------------------
+## ----strdata1, echo = FALSE, results = 'markup'-------------------------------
 # Structure of the dataset 
 load(system.file("/extdata", "tas.su.1995.MM5I.rda", package = "mrbsizeR"))
 
 
-## ----strdata2, echo = TRUE, results = 'markup'---------------------------
+## ----strdata2, echo = TRUE, results = 'markup'--------------------------------
 # Structure of the dataset 
 str(tas.su.1995.MM5I)
 
@@ -34,58 +34,58 @@ map(add = TRUE)
 par(mar = c(1, 1, 3, 1))
 image(tas.su.1995.MM5I$su, col = fields::tim.colors(), xaxt = 'n', yaxt = 'n', main = "Surface Air Temperature 1995 (MM5I)", cex.main = 0.8, asp = dim(tas.su.1995.MM5I$su)[2] / dim(tas.su.1995.MM5I$su)[1], bty = "n")
 
-## ----Samples_t_dist1, echo = TRUE, eval = FALSE--------------------------
+## ----Samples_t_dist1, echo = TRUE, eval = FALSE-------------------------------
 #  # Sampling from a multivariate t-distribution
 #  tas.post.samp <- rmvtDCT(object = tas.su.1995.MM5I$su,
 #                           lambda = 0.2, sigma = 36, nu0 = 15, ns = 1000)
 
-## ----taperingplot1, echo=TRUE, eval=FALSE--------------------------------
+## ----taperingplot1, echo=TRUE, eval=FALSE-------------------------------------
 #  # Plot of signal-independent tapering functions
 #  TaperingPlot(lambdaSmoother = c(1, 100, 10000), mm = 120, nn = 98)
 
-## ----taperingplot3, echo=TRUE, eval=FALSE--------------------------------
+## ----taperingplot3, echo=TRUE, eval=FALSE-------------------------------------
 #  # Plot of signal-dependent tapering functions
 #  TaperingPlot(lambdaSmoother = c(1, 100, 10000),
 #               mm = 120, nn = 98, Xmu = tas.post.samp$mu)
 
-## ----objectivefunc1, echo=TRUE, eval=FALSE-------------------------------
+## ----objectivefunc1, echo=TRUE, eval=FALSE------------------------------------
 #  # Minimization of objective function with respect to the smoothing parameters
 #  tas.min.lambda.out <- MinLambda(Xmu = tas.post.samp$mu, mm = 120, nn = 98,
 #                                  nLambda = 3, sphere = FALSE,
 #                                  lambda=10^seq(-12, 10, len = 45))
 
-## ----objectivefunc2, echo=FALSE, eval=TRUE-------------------------------
+## ----objectivefunc2, echo=FALSE, eval=TRUE------------------------------------
 load(system.file("/extdata", "tas.min.lambda.out.Rda", package = "mrbsizeR"))
 
-## ----objectivefunc3, echo=TRUE, eval=TRUE, results='markup'--------------
+## ----objectivefunc3, echo=TRUE, eval=TRUE, results='markup'-------------------
 # Minimal smoothing parameter values
 tas.min.lambda.out$lambda[tas.min.lambda.out$minind]
 
-## ----objectivefunc4, echo=TRUE, eval=FALSE-------------------------------
+## ----objectivefunc4, echo=TRUE, eval=FALSE------------------------------------
 #  # Plot of the minimization result
 #  plot(x = tas.min.lambda.out)
 
-## ----mrbsizer1, echo=TRUE, eval=FALSE------------------------------------
+## ----mrbsizer1, echo=TRUE, eval=FALSE-----------------------------------------
 #  # Creation of differences of smooths at neighboring scales
 #  tas.mrb.out <- mrbsizeRgrid(posteriorFile = tas.post.samp$sample, mm = 120, nn = 98,
 #                              lambdaSmoother = c(0.1, 90, 15000), prob = 0.95)
 
-## ----smoothmeanplot1, echo=TRUE, eval=FALSE------------------------------
+## ----smoothmeanplot1, echo=TRUE, eval=FALSE-----------------------------------
 #  # Posterior mean of the different detail components
 #  plot(x = tas.mrb.out$smMean, color.pallet = fields::tim.colors(), turnOut = FALSE,
 #       aspRatio = 98/120)
 
-## ----pwmap1, echo=TRUE, eval=FALSE---------------------------------------
+## ----pwmap1, echo=TRUE, eval=FALSE--------------------------------------------
 #  # Plot of pointwise (PW) maps
 #  plot(x = tas.mrb.out$hpout, plot_which = "PW", aspRatio = 98/120,
 #       color = c("dodgerblue3", "gainsboro", "firebrick1"), turnOut = FALSE)
 
-## ----hpwmap1, echo=TRUE, eval=FALSE--------------------------------------
+## ----hpwmap1, echo=TRUE, eval=FALSE-------------------------------------------
 #  # Plot of highest pointwise probability (HPW) maps
 #  plot(x = tas.mrb.out$hpout, plotWhich = "HPW", aspRatio = 98/120,
 #       color = c("dodgerblue3", "gainsboro", "firebrick1"), turnOut = FALSE)
 
-## ----cimap1, echo=TRUE, eval=FALSE---------------------------------------
+## ----cimap1, echo=TRUE, eval=FALSE--------------------------------------------
 #  # Plot of simultaneous credible interval (CI) maps
 #  plot(x = tas.mrb.out$ciout, color = c("dodgerblue3", "gainsboro", "firebrick1"),
 #       turnOut = FALSE, aspRatio = 98/120)
@@ -100,30 +100,30 @@ map("world", wrap = TRUE, add = TRUE)
 box()
 
 
-## ----spherical2, echo=TRUE, eval=FALSE-----------------------------------
+## ----spherical2, echo=TRUE, eval=FALSE----------------------------------------
 #  # Minimization of objective function with respect to the smoothing parameters
 #  # for spherical data
 #  spherical.min.lambda.out <- MinLambda(Xmu = dat.ccsm4.mu, mm = 144, nn = 72,
 #                                        nGrid = 35, nLambda = 2, sphere = TRUE)
 
-## ----spherical4, echo=TRUE, eval=FALSE-----------------------------------
+## ----spherical4, echo=TRUE, eval=FALSE----------------------------------------
 #  # Creation of differences of smooths at neighboring scales for spherical data
 #  spherical.mrb.out <- mrbsizeRsphere(posteriorFile = dat.ccsm4, mm = 144, nn = 72,
 #                                      prob = 0.95, lambdaSmoother = c(0.0026))
 
-## ----spherical5, echo=TRUE, eval=FALSE-----------------------------------
+## ----spherical5, echo=TRUE, eval=FALSE----------------------------------------
 #  # Posterior mean of the different detail components for spherical data
 #  plot(x = spherical.mrb.out$smMean, lon = dat.ccsm4$lon, lat = dat.ccsm4$lat,
 #       color.pallet = fields::tim.colors())
 #  
 
-## ----spherical6, echo=TRUE, eval=FALSE-----------------------------------
+## ----spherical6, echo=TRUE, eval=FALSE----------------------------------------
 #  # Plot of highest pointwise probability (HPW) maps for spherical data
 #  plot(x = spherical.mrb.out$hpout, lon = dat.ccsm4$lon, lat = dat.ccsm4$lat,
 #       plotWhich = "HPW", color = c("dodgerblue3", "gainsboro", "firebrick1"))
 #  
 
-## ----increasesamples, echo=TRUE, eval=FALSE, results ='asis'-------------
+## ----increasesamples, echo=TRUE, eval=FALSE, results ='asis'------------------
 #  # Generate samples from posterior distribution
 #  tas.post.samp <- rmvtDCT(object = tas.su.1995.MM5I$su,
 #                           lambda = 0.2, sigma = 36, nu0 = 15, ns = 1000)
