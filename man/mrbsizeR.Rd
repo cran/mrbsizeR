@@ -3,7 +3,6 @@
 \docType{package}
 \name{mrbsizeR}
 \alias{mrbsizeR}
-\alias{mrbsizeR-package}
 \title{mrbsizeR: Scale space multiresolution analysis in R.}
 \description{
 \code{mrbsizeR} contains a method for the scale space multiresolution analysis of 
@@ -42,6 +41,7 @@ can therefore be summarized in two steps:
 
 This method has first been proposed by Holmstrom, Pasanen, Furrer, Sain (2011), 
 see also \cr http://cc.oulu.fi/~lpasanen/MRBSiZer/.
+
 
 \strong{Major Functions}
 \itemize{

@@ -1,4 +1,10 @@
-# mrbsizeR 1.2.1
+# mrbsizeR 1.3
+
+## Bug fixes
+
+* fixed LazyData issue.
+* removed old urls from DESCRIPTION and README.
+* addressed NOTE from editable Rd contents.
 
 ## Bug fixes
 
